@@ -69,6 +69,7 @@ new_list.addEventListener("click", () => {
 function to_do(){
     let new_div = document.createElement("ul");
     new_div.setAttribute("class", "lista");
+    
     new_div.innerHTML = `<li><input type="checkbox"> <input type="text" class="ts"></li>`;
     task.insertBefore(new_div, task.childNodes[0]);
     focus=document.querySelectorAll('.ts');
