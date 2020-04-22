@@ -76,7 +76,7 @@ new_list.addEventListener("click", () => {
 
 ///new task
  new_task[0].addEventListener('click',to_do);
- console.log(task1); 
+
 function to_do(){
         
         
@@ -89,12 +89,19 @@ function to_do(){
     task.insertBefore(new_div, task.childNodes[0]);
     focus=document.querySelectorAll('.ts');
     focus[0].focus();
-    
+   focus[0].addEventListener('blur',()=>{
+   
+    if(focus[0].value==""){
+        task.removeChild(task.childNodes[0]);
+       // alert("Introduce a new task");
+        //focus[0].focus(); 
     }
-    
 
-    
+});
+    }
+  
 }
 
-console.log(list_titles['children']['length']);
+
+
 
