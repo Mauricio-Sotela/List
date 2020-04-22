@@ -1,0 +1,82 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  /** Reset para REMS  65,5% = 10px de 16px**/
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  background: radial-gradient(circle at center center, #00c2f7, #9198e5);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Globales */
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 3.4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.6rem;
+}
+
+.main_container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_container .main {
+  width: 70rem;
+  height: 60rem;
+  margin: 0;
+  padding: 0;
+  background-color: silver;
+  border-radius: 1rem;
+  position: relative;
+  display: flex;
+  overflow-x: hidden;
+}
+.main_container .main .left {
+  width: 40%;
+  height: 100%;
+  background-color: #d4d4d4;
+  padding: 1rem;
+  overflow: hidden;
+}
+.main_container .main .hide {
+  margin: 0;
+  padding: 0;
+  width: 0;
+}
+.main_container .main .right {
+  width: 100%;
+  height: 100%;
+  background-color: #dfdddd;
+  padding: 1rem;
+}
+.main_container .main .right .show_menu {
+  display: none;
+}
+.main_container .main .right .show {
+  display: initial;
+}
+
+/*# sourceMappingURL=style.css.map */
