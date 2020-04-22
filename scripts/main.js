@@ -8,9 +8,16 @@ let list_items = document.querySelector(".list_items");
 let new_task = document.querySelectorAll(".task_button");
 let task=document.querySelector('.task');
 let task1=document.querySelectorAll('.task');
+
 // let =document.querySelector('.');
 // let =document.querySelector('.');
 // let =document.querySelector('.');
+
+// on page loaded
+if(list_titles['children']['length']==0){
+    new_task[0].style.cssText='visibility: hidden;'
+};
+
 
 //hide menu
 hide_menu.addEventListener("click", () => {
@@ -26,6 +33,7 @@ show_menu.addEventListener("click", () => {
 
 //add new list title
 new_list.addEventListener("click", () => {
+        new_task[0].style.cssText='visibility: visible;'
     let new_div = document.createElement("DIV");
     new_div.setAttribute("class", "title");
     new_div.innerHTML = `<h5 class="h5" >Untitled</h5>`;
@@ -59,6 +67,8 @@ new_list.addEventListener("click", () => {
     });
     blur();
     new_div.focus();
+    title_imput[0].addEventListener("blur",to_do );
+   
     // console.log(new_task);
 });
 
@@ -68,19 +78,23 @@ new_list.addEventListener("click", () => {
  new_task[0].addEventListener('click',to_do);
  console.log(task1); 
 function to_do(){
-    
-    if(task1[0]['children']['length']<=10){
         
+        
+    if(task1[0]['children']['length']<=10){
+         
     let new_div = document.createElement("ul");
     new_div.setAttribute("class", "lista");
 
     new_div.innerHTML = `<li><input type="checkbox"> <input type="text" class="ts"></li>`;
     task.insertBefore(new_div, task.childNodes[0]);
     focus=document.querySelectorAll('.ts');
-    focus[0].focus();}
+    focus[0].focus();
+    
+    }
     
 
     
 }
 
+console.log(list_titles['children']['length']);
 
