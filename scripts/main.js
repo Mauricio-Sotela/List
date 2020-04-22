@@ -80,7 +80,7 @@ new_list.addEventListener("click", () => {
 function to_do(){
         
         
-    if(task1[0]['children']['length']<=10){
+    if(task1[0]['children']['length']<10){
          
     let new_div = document.createElement("ul");
     new_div.setAttribute("class", "lista");
