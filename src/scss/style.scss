@@ -1,3 +1,90 @@
-body{
-    background-color: grey;
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  /** Reset para REMS  65,5% = 10px de 16px**/
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  background: radial-gradient(
+    circle at center center,
+    rgb(0, 194, 247),
+    rgb(145, 152, 229)
+  );
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Globales */
+
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 3.4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.6rem;
+}
+
+.main_container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .main {
+    width: 70rem;
+    height: 60rem;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(192, 192, 192);
+    border-radius: 1rem;
+    position: relative;
+    display: flex;
+    overflow-x: hidden;
+
+    .left {
+      width: 40%;
+      height: 100%;
+      background-color: rgb(212, 212, 212);
+      padding: 1rem;
+      overflow: hidden;
+    }
+    .hide {
+        margin: 0;
+        padding: 0;
+        width: 0;
+    }
+
+    .right {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(223, 221, 221);
+      padding: 1rem;
+
+      .show_menu{
+          display: none;
+      }
+      .show{
+        display: initial;
+    }
+    }
+    
+  }
 }
