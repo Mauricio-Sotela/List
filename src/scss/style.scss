@@ -41,8 +41,8 @@ h3 {
 h4 {
   font-size: 2.6rem;
 }
-button{
-    cursor: pointer;
+button {
+  cursor: pointer;
 }
 
 .main_container {
@@ -63,13 +63,13 @@ button{
     display: flex;
     overflow: hidden;
 
-    .top{
-        position: sticky;
-        top: 0;
-        left: 0;
-        background-color:rgb(212, 212, 212) ;
-        margin-bottom: 1rem;
-        padding: 1rem;
+    .top {
+      position: sticky;
+      top: 0;
+      left: 0;
+      background-color: rgb(212, 212, 212);
+      margin-bottom: 1rem;
+      padding: 1rem;
     }
 
     .left {
@@ -78,14 +78,14 @@ button{
       background-color: rgb(212, 212, 212);
       overflow-y: scroll;
 
-      .list_titles{
-          padding: 1rem;
+      .list_titles {
+        padding: 1rem;
       }
     }
     .hide {
-        margin: 0;
-        padding: 0;
-        width: 0;
+      margin: 0;
+      padding: 0;
+      width: 0;
     }
 
     .right {
@@ -94,13 +94,28 @@ button{
       background-color: rgb(223, 221, 221);
       padding: 1rem;
 
-      .show_menu{
-          display: none;
+      .show_menu {
+        display: none;
       }
-      .show{
+      .show {
         display: initial;
+      }
+
+      .title{ 
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 1rem;
+        .main_title{
+          
+          height: 4rem;
+          min-width: 8rem;
+          font-size: 2rem;
+          font-weight: 900;
+          letter-spacing: .2rem;
+          border: none;
+          background-color: transparent;
+        }
+      }
     }
-    }
-    
   }
 }
