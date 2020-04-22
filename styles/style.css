@@ -93,5 +93,19 @@ button {
 .main_container .main .right .show {
   display: initial;
 }
+.main_container .main .right .title {
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 1rem;
+}
+.main_container .main .right .title .main_title {
+  height: 4rem;
+  min-width: 8rem;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.2rem;
+  border: none;
+  background-color: transparent;
+}
 
 /*# sourceMappingURL=style.css.map */
