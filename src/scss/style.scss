@@ -40,6 +40,9 @@ h3 {
 h4 {
   font-size: 2.6rem;
 }
+button{
+    cursor: pointer;
+}
 
 .main_container {
   width: 100vw;
@@ -57,14 +60,26 @@ h4 {
     border-radius: 1rem;
     position: relative;
     display: flex;
-    overflow-x: hidden;
+    overflow: hidden;
+
+    .top{
+        position: sticky;
+        top: 0;
+        left: 0;
+        background-color:rgb(212, 212, 212) ;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
 
     .left {
       width: 40%;
       height: 100%;
       background-color: rgb(212, 212, 212);
-      padding: 1rem;
-      overflow: hidden;
+      overflow-y: scroll;
+
+      .list_titles{
+          padding: 1rem;
+      }
     }
     .hide {
         margin: 0;
