@@ -28,7 +28,7 @@ show_menu.addEventListener('click',()=>{
 new_list.addEventListener('click',()=>{
     let new_div=document.createElement('DIV');
     new_div.setAttribute("class", "title");
-    new_div.innerHTML=`<h5 class="h5" >new</h5>`;
+    new_div.innerHTML=`<h5 class="h5" >Untitled</h5>`;
     list_titles.insertBefore(new_div, list_titles.childNodes[0]);
     
 })
@@ -37,9 +37,10 @@ new_list.addEventListener('click',()=> {
     
     let new_div=document.createElement('DIV');
     new_div.setAttribute("class", "title");
-    new_div.innerHTML=`<input type="text" name="list" class="main_title" placeholder="Untitled"  >`;
+    new_div.innerHTML=`<input type="text" name="list" class="main_title" placeholder="Untitled" >  `;
     list_items.insertBefore(new_div, list_items.childNodes[0]);
-
+    let focus= document.querySelectorAll('.main_title');
+    focus[0].focus();
 
     let h5 = document.querySelectorAll(".h5");
     let title_imput= document.querySelectorAll('.main_title');
@@ -48,4 +49,5 @@ new_list.addEventListener('click',()=> {
         h5[0].innerHTML=title_imput[0].value;
     })
     blur();
+    new_div.focus();
   });
