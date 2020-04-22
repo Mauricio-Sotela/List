@@ -7,6 +7,7 @@ let list_titles = document.querySelector(".list_titles");
 let list_items = document.querySelector(".list_items");
 let new_task = document.querySelectorAll(".task_button");
 let task=document.querySelector('.task');
+let task1=document.querySelectorAll('.task');
 // let =document.querySelector('.');
 // let =document.querySelector('.');
 // let =document.querySelector('.');
@@ -65,15 +66,21 @@ new_list.addEventListener("click", () => {
 
 ///new task
  new_task[0].addEventListener('click',to_do);
-
+ console.log(task1); 
 function to_do(){
+    
+    if(task1[0]['children']['length']<=10){
+        
     let new_div = document.createElement("ul");
     new_div.setAttribute("class", "lista");
-    
+
     new_div.innerHTML = `<li><input type="checkbox"> <input type="text" class="ts"></li>`;
     task.insertBefore(new_div, task.childNodes[0]);
     focus=document.querySelectorAll('.ts');
-    focus[0].focus();
-    console.log(focus);
+    focus[0].focus();}
+    
+
     
 }
+
+
