@@ -116,8 +116,7 @@ ul {
   width: 100%;
   height: 100%;
   background-color: #dfdddd;
-  padding: 1rem;
-  padding-top: 0;
+  padding: 0;
   overflow-Y: scroll;
 }
 .main_container .main .right .to_do {
@@ -127,6 +126,9 @@ ul {
   background-color: #dfdddd;
   margin-bottom: 1rem;
   margin-top: 0;
+  padding: 1rem;
+}
+.main_container .main .right .list_items {
   padding: 1rem;
 }
 .main_container .main .right .show_menu {
