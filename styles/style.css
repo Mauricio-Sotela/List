@@ -119,14 +119,19 @@ ul {
   padding: 0;
   overflow-Y: scroll;
 }
-.main_container .main .right .to_do {
+.main_container .main .right .to_do, .main_container .main .right .berger_menu {
   position: sticky;
-  top: 0;
+  top: -2.5rem;
   left: 0;
   background-color: #dfdddd;
   margin-bottom: 1rem;
   margin-top: 0;
   padding: 1rem;
+}
+.main_container .main .right .berger_menu {
+  width: fit-content;
+  z-index: 1;
+  top: 0;
 }
 .main_container .main .right .list_items {
   padding: 1rem;
