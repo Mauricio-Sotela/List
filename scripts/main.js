@@ -3,7 +3,7 @@ let hide_menu = document.querySelector(".hide_menu");
 let left = document.querySelector(".left");
 let show_menu = document.querySelector(".show_menu");
 let new_list = document.querySelector(".new_list");
-let list_titles = document.querySelector(".list_titles");
+let list_titles = document.querySelectorAll(".list_titles");
 let list_items = document.querySelectorAll(".list_items");
 let new_task = document.querySelectorAll(".task_button");
 let task=document.querySelector('.task');
@@ -15,7 +15,7 @@ let task1=document.querySelectorAll('.task');
 
 // on page loaded
 if(new_task['length']>0){
-   if(list_titles['children']['length']==0){
+   if(list_titles[0]['children']['length']==0){
     new_task[0].style.cssText='visibility: hidden;' 
 };
  
@@ -39,8 +39,8 @@ new_list.addEventListener("click", () => {
         new_task[0].style.cssText='visibility: visible;'
     let new_div = document.createElement("DIV");
     new_div.setAttribute("class", "title");
-    new_div.innerHTML = `<h5 class="h5" >Untitled</h5>`;
-    list_titles.insertBefore(new_div, list_titles.childNodes[0]);
+    new_div.innerHTML = `<h5 class="h5" role="button" >Untitled</h5>`;
+    list_titles[0].insertBefore(new_div, list_titles[0].childNodes[0]);
 });
 
 ////new list block
@@ -84,6 +84,21 @@ new_list.addEventListener("click", () => {
     // } 
     
     // console.log(new_task);
+    list_titles = document.querySelectorAll(".list_titles");
+    
+    
+   // console.log(list_items);
+   arr=list_titles[0]['children'];
+   console.log(arr);
+   let aa = Array.from(arr);
+   console.log(aa);
+   
+   for (let i = 0; i < aa.length; i++) {
+      aa[i].addEventListener('click',()=>{
+           aa[i].style.cssText='color:red;' 
+        })
+         
+       } 
 });
 
 
@@ -103,7 +118,7 @@ let task=document.querySelectorAll('.task');
     new_div.setAttribute("class", "lista");
 
     new_div.innerHTML = `<li><input type="checkbox"> <input type="text" class="ts"></li>`;
-    task[1].appendChild(new_div)
+    task[1].insertBefore(new_div, task[1].childNodes[0]);
     focus=document.querySelectorAll('.ts');
     focus[0].focus();
    focus[0].addEventListener('blur',()=>{
@@ -119,8 +134,3 @@ let task=document.querySelectorAll('.task');
   
 }
 
-
-
-// console.log(list_items);
-
- 
