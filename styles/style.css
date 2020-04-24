@@ -139,6 +139,11 @@ ul {
 .main_container .main .right .show_menu {
   display: none;
 }
+.main_container .main .right .show_menu1 {
+  width: 100px;
+  height: 80px;
+  background-color: #2ac01c;
+}
 .main_container .main .right .show {
   display: initial;
 }
