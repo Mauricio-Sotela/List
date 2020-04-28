@@ -177,5 +177,8 @@ ul {
   text-decoration-line: line-through;
   background-color: rgba(0, 255, 78, 0.09);
 }
+.main_container .main .right .block2 {
+  background-color: green;
+}
 
 /*# sourceMappingURL=style.css.map */
