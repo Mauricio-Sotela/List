@@ -7,7 +7,7 @@ let new_list = document.querySelector(".new_list"); //left
 let new_task = document.querySelector(".task_button"); //right
 let list_item = document.querySelector(".list_item"); //right
 let list_parent = document.querySelector(".list_parent"); //right
-let block = document.querySelector(".block"); //right
+let block = document.querySelector(".block1"); //right
 let focus_mainTitle; //// right title focus
 let counter = 0;
 let z = 1;
@@ -19,11 +19,13 @@ let tasks = document.querySelectorAll(".task"); //right
 let h5 = 0;
 let title_imput;
 
+
 //////////////////page load************
 if (list_parent.childNodes.length ==3) {
   block.style.cssText='display:none'
   
 }
+block.classList.toggle('block')
 
 //////////////////////////**************///////////////// */
 new_list.addEventListener("click", function () {
@@ -65,12 +67,12 @@ new_list.addEventListener("click", function () {
       } else {
         h5[i].innerHTML = focus_mainTitle[i].value;
       };
-      block.childNodes[4].focus();
+      
+      //block.childNodes[4].focus();
     }
   };
+  
 });
-
-
 
   
 

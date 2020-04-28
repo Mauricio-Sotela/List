@@ -1,0 +1,227 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+  /** Reset para REMS  65,5% = 10px de 16px**/
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  background: radial-gradient(circle at center center, #00c2f7, #9198e5);
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+/* Globales */
+h1 {
+  font-size: 3.8rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3.4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.6rem;
+}
+
+h5 {
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  margin: 1rem;
+  letter-spacing: .1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.main_container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_container .main {
+  width: 70rem;
+  height: 60rem;
+  margin: 0;
+  padding: 0;
+  background-color: silver;
+  border-radius: 1rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.main_container .main .top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #d4d4d4;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.main_container .main .left {
+  width: 40%;
+  height: 100%;
+  background-color: #d4d4d4;
+  overflow-y: scroll;
+}
+
+.main_container .main .left .list_titles {
+  padding: 1rem;
+}
+
+.main_container .main .hide {
+  margin: 0;
+  padding: 0;
+  width: 0;
+}
+
+.main_container .main .hide_menu {
+  width: 100%;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_container .main .hide_menu button {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  background-color: transparent;
+}
+
+.main_container .main .hide_menu button i {
+  font-size: 2rem;
+}
+
+.main_container .main .hide_menu button:hover {
+  background-color: #dfdddd;
+  border-radius: 50%;
+}
+
+.main_container .main .right {
+  width: 100%;
+  height: 100%;
+  background-color: #dfdddd;
+  padding: 0;
+  overflow-Y: scroll;
+}
+
+.main_container .main .right .to_do, .main_container .main .right .berger_menu {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -2.5rem;
+  left: 0;
+  background-color: #dfdddd;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  padding: 1rem;
+}
+
+.main_container .main .right .berger_menu {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  z-index: 1;
+  top: 0;
+}
+
+.main_container .main .right .list_items {
+  padding: 1rem;
+}
+
+.main_container .main .right .show_menu {
+  display: none;
+}
+
+.main_container .main .right .show_menu1 {
+  width: 100px;
+  height: 80px;
+  background-color: #2ac01c;
+}
+
+.main_container .main .right .show {
+  display: initial;
+}
+
+.main_container .main .right .title {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 1rem;
+}
+
+.main_container .main .right .title .main_title {
+  text-transform: capitalize;
+  padding: 1rem;
+  height: 4rem;
+  min-width: 8rem;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: .2rem;
+  border: none;
+  background-color: transparent;
+}
+
+.main_container .main .right .ts {
+  text-transform: capitalize;
+  margin: .6rem .3rem;
+  padding: .5rem;
+  border-radius: 1rem;
+  border: none;
+  width: 75%;
+  background-color: rgba(248, 248, 248, 0.246);
+}
+
+.main_container .main .right .line {
+  color: rgba(124, 124, 125, 0.76);
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+  background-color: rgba(0, 255, 78, 0.09);
+}
+
+.main_container .main .right .block2 {
+  background-color: green;
+}
+/*# sourceMappingURL=style.css.map */
