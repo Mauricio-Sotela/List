@@ -172,5 +172,10 @@ ul {
   width: 75%;
   background-color: rgba(248, 248, 248, 0.246);
 }
+.main_container .main .right .line {
+  color: rgba(124, 124, 125, 0.76);
+  text-decoration-line: line-through;
+  background-color: rgba(0, 255, 78, 0.09);
+}
 
 /*# sourceMappingURL=style.css.map */
