@@ -6,139 +6,153 @@ let show_menu = document.querySelector(".show_menu");
 let new_list = document.querySelector(".new_list"); //left
 let new_task = document.querySelector(".task_button"); //right
 let list_item = document.querySelector(".list_item"); //right
+let list_parent = document.querySelector(".list_parent"); //right
+let block = document.querySelector(".block"); //right
 let focus_mainTitle; //// right title focus
-let counter=0;
-let z=1;
-
+let counter = 0;
+let z = 1;
+let focus=0;
 
 ///////////////////multiple/////////////////
 let list_titles = document.querySelectorAll(".list_titles"); //left
 let tasks = document.querySelectorAll(".task"); //right
-let h5;
-let title_imput; 
+let h5 = 0;
+let title_imput;
 
-// let =document.querySelector('.');
-// let =document.querySelector('.');
-// let =document.querySelector('.');
-
-///////////////////////////// on page loaded///////////////////////////////
-
-/*console.log(tasks['length']);
-console.log(new_task);*/
-
-if (tasks["length"] == 0) {
-  if (list_titles[0]["children"]["length"] == 0) {
-    new_task.style.cssText = "visibility: hidden;";
-  }
+//////////////////page load************
+if (list_parent.childNodes.length ==3) {
+  block.style.cssText='display:none'
+  
 }
 
-//////////////////////////////////////////menu////////////////
-
-//hide menu
-hide_menu.addEventListener("click", () => {
-  left.classList.add("hide");
-  show_menu.classList.add("show");
-});
-
-// show menu
-show_menu.addEventListener("click", () => {
-  left.classList.remove("hide");
-  show_menu.classList.remove("show");
-});
-
-///////////////////////new list left side///////////////////
-new_list.addEventListener("click", () => {
-    for (let i = counter; i < z; i++) {
-        if (counter==0) {
-            i=counter;
-            z=1; 
-        }else{
-
-        }
-    }
-  });
-
-
-
-
-
-new_list.addEventListener("click", () => {
-  new_task.style.cssText = "visibility: visible;";
-  new_task.addEventListener("click",to_do);
+//////////////////////////**************///////////////// */
+new_list.addEventListener("click", function () {
+  block.style.cssText='display:initial'
   let new_div = document.createElement("DIV");
   new_div.setAttribute("class", "title");
   new_div.innerHTML = `<h5 class="h5" role="button" >Untitled</h5>`;
   list_titles[0].insertBefore(new_div, list_titles[0].childNodes[0]);
   h5 = document.querySelectorAll(".h5"); //left
-  counter++;
-  z++;
-});
 
-//left
-new_list.addEventListener("click", () => {
-  let new_divTask = document.createElement("DIV");
-  new_divTask.setAttribute("class", "task");
-  // new_divTask.innerHTML = ` <div class=""></div> `;
-  list_item.appendChild(new_divTask);
-  tasks = document.querySelectorAll(".task"); //right
-  title_imput = document.querySelectorAll(".main_title"); //right
-
-});
-
-////////////////////new list + tasks right side////////////
-
-//right
-new_list.addEventListener("click", () => {
   let task_new_div = document.createElement("DIV");
   task_new_div.setAttribute("class", "title");
-  task_new_div.innerHTML = `<input type="text" name="list" class="main_title" placeholder="Untitled">`;
-  list_item.insertBefore(task_new_div, list_item.childNodes[0]);
+  task_new_div.innerHTML = ` <div class="list_item">
+  <input type="text" class="main_title" placeholder="Untitled">
+
+ <div class="task"></div> 
+</div>`;
+  block.insertBefore(task_new_div, block.childNodes[0]);
   focus_mainTitle = document.querySelectorAll(".main_title");
   focus_mainTitle[0].focus();
   tasks = document.querySelectorAll(".task");
 
-  console.log(h5);
-  console.log(tasks);
-  console.log(focus_mainTitle);
-  console.log(z);
-  console.log(counter);
-  focus_mainTitle[0].addEventListener("blur", function blur() {
-    if (focus_mainTitle[0].value == "") {
-      h5[0].innerHTML = "Untitled";
-    } else {
-      h5[0].innerHTML = focus_mainTitle[0].value;
-    };
-    to_do();
-  });
+
+  focus_mainTitle[0].addEventListener("blur", action);
+  focus_mainTitle[0].addEventListener("keypress", enterKey);
+
+  function enterKey(e){
+    if(e.code=='Enter'){
+      action()
+    }
+  }
   
+  function action() {
+    // to_do();
+    for (let i = 0; i < h5.length; i++) {
+      
+      if (focus_mainTitle[i].value == "") {
+        h5[i].innerHTML = "Untitled";
+      } else {
+        h5[i].innerHTML = focus_mainTitle[i].value;
+      };
+      block.childNodes[4].focus();
+    }
+  };
 });
 
 
 
-
-
-
-
-
-
-
-
-function to_do() {
- 
-
   
-    let new_div = document.createElement("ul");
-    new_div.setAttribute("class", "lista");
 
-    new_div.innerHTML = `<li><input type="checkbox"> <input type="text" class="ts"></li>`;
-    tasks[counter-1].insertBefore(new_div, tasks[counter-1].childNodes[0]);
-    focus = document.querySelectorAll(".ts");
-    focus[0].focus();
-    focus[0].addEventListener("blur", () => {
-      if (focus[0].value == "") {
-        tasks[counter-1].removeChild(tasks[counter-1].childNodes[0]);
-      }
-      // console.log(focus);
-    });
-  
+
+
+
+
+
+class Task {
+  constructor(task) {
+    const field = document.createElement("li");
+    field.innerHTML = `<input type="checkbox"> <input type="text" class="ts" value=${task}>`;
+    const taskList = document.querySelector("#tasks");
+    taskList.insertBefore(field, taskList.firstChild);
+  }
 }
+
+var li = document.querySelectorAll("li");
+class ListGenerator {
+  constructor() {
+    const btn = document.querySelector("button");
+    let user = document.querySelector(".user");
+    btn.addEventListener("click", this.main.bind(this));
+    user.addEventListener("blur", this.main.bind(this));
+    user.addEventListener("keypress", this.runScript.bind(this));
+  }
+
+  runScript(e) {
+    //// on enter key press
+    if (e.code == "Enter") {
+      console.log(e);
+      this.main();
+    }
+  }
+
+  main() {
+   let user = document.querySelector(".user");
+    //console.log(user.value);
+    this.tasks = user;
+    this.addTask();
+    li = document.querySelectorAll("li");
+    //console.log(li);
+    new RemoveTask();
+    user.value = "";
+  }
+
+  addTask() {
+    //console.log(this.tasks);
+    if (this.tasks.value.length > 0) {
+      const task = new Task(this.tasks.value);
+      this.tasks.focus();
+      return;
+    } else {
+      // alert("Introduce a task");
+      //this.tasks.focus();
+      return;
+    }
+  }
+}
+
+class RemoveTask {
+  constructor() {
+    if (li.length > 0) {
+      for (let i = 0; i < li.length; i++) {
+        li[i].addEventListener("click", function () {
+          if (this.firstElementChild.checked == true){
+            this.lastElementChild.style.cssText='color: rgba(124, 124, 125, 0.76);text-decoration-line: line-through;background-color: rgba(0, 255, 78, 0.09)';
+            this.lastElementChild.setAttribute("readonly", true)
+          } else if(this.firstElementChild.checked == false) {
+            this.lastElementChild.style.cssText='color: black;text-decoration-line: none;rgba(248, 248, 248, 0.246), 0.09)';
+            this.lastElementChild.removeAttribute("readonly");
+            this.lastElementChild.focus()
+          }
+          // this.lastElementChild.style.cssText='color: rgba(124, 124, 125, 0.76);text-decoration-line: line-through;background-color: rgba(0, 255, 78, 0.09)'
+
+        });
+      }
+    }
+  }
+}
+
+const gen = new ListGenerator();
+//const gen2 = new RemoveTask()
+
+

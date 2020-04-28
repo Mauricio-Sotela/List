@@ -151,7 +151,9 @@ ul{list-style: none;}
       }
       .show {
         display: initial;
+        
       }
+     
 
       .title{ 
         width: 100%;
@@ -177,6 +179,12 @@ ul{list-style: none;}
         border: none;
         width: 75%;
         background-color: rgba(248, 248, 248, 0.246);
+      }
+      .line{
+        color: rgba(124, 124, 125, 0.76);
+        text-decoration-line: line-through;
+        background-color: rgba(0, 255, 78, 0.09);
+    
       }
     }
   }
