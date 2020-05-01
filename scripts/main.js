@@ -12,6 +12,7 @@ let focus_mainTitle; //// right title focus
 let counter = 0;
 let z = 1;
 let focus=0;
+let eliminar=document.querySelectorAll('.delete')
 
 ///////////////////multiple/////////////////
 let list_titles = document.querySelectorAll(".list_titles"); //left
@@ -84,7 +85,7 @@ new_list.addEventListener("click", function () {
 class Task {
   constructor(task) {
     const field = document.createElement("li");
-    field.innerHTML = `<input type="checkbox"> <input type="text" class="ts" value=${task}>`;
+    field.innerHTML = `<input type="checkbox"> <input type="text" class="ts" value=${task}> <button class="delete">x</button>`;
     const taskList = document.querySelector("#tasks");
     taskList.insertBefore(field, taskList.firstChild);
   }
@@ -103,7 +104,7 @@ class ListGenerator {
   runScript(e) {
     //// on enter key press
     if (e.code == "Enter") {
-      console.log(e);
+    
       this.main();
     }
   }
@@ -117,6 +118,11 @@ class ListGenerator {
     //console.log(li);
     new RemoveTask();
     user.value = "";
+    eliminar=document.querySelectorAll('.delete');
+    eliminar.forEach(element => {element.style.cssText='display:none;'
+      
+    });
+  
   }
 
   addTask() {
@@ -137,14 +143,22 @@ class RemoveTask {
   constructor() {
     if (li.length > 0) {
       for (let i = 0; i < li.length; i++) {
+        
         li[i].addEventListener("click", function () {
           if (this.firstElementChild.checked == true){
-            this.lastElementChild.style.cssText='color: rgba(124, 124, 125, 0.76);text-decoration-line: line-through;background-color: rgba(0, 255, 78, 0.09)';
-            this.lastElementChild.setAttribute("readonly", true)
+            this.lastElementChild.previousElementSibling.style.cssText='color: rgba(124, 124, 125, 0.76);text-decoration-line: line-through;background-color: rgba(0, 255, 78, 0.09)';
+            this.lastElementChild.previousElementSibling.setAttribute("readonly", true);
+            this.lastElementChild.style.cssText='display:inline;';
+            this.lastElementChild.addEventListener('click',function (){
+              this.parentElement.remove();
+            })
           } else if(this.firstElementChild.checked == false) {
-            this.lastElementChild.style.cssText='color: black;text-decoration-line: none;rgba(248, 248, 248, 0.246), 0.09)';
-            this.lastElementChild.removeAttribute("readonly");
-            this.lastElementChild.focus()
+            
+            this.lastElementChild.previousElementSibling.style.cssText='color: black;text-decoration-line: none;rgba(248, 248, 248, 0.246), 0.09)';
+            this.lastElementChild.previousElementSibling.removeAttribute("readonly");
+            this.lastElementChild.previousElementSibling.focus();
+            this.lastElementChild.style.cssText='display:none;';
+            
           }
           // this.lastElementChild.style.cssText='color: rgba(124, 124, 125, 0.76);text-decoration-line: line-through;background-color: rgba(0, 255, 78, 0.09)'
 

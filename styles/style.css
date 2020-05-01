@@ -180,5 +180,9 @@ ul {
 .main_container .main .right .block2 {
   background-color: green;
 }
+.main_container .main .right .delete {
+  display: none;
+  font-size: 6rem;
+}
 
 /*# sourceMappingURL=style.css.map */
